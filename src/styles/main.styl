@@ -1,0 +1,48 @@
+@require './helpers.styl'
+
+:root
+  --primary: 26, 92, 255
+  --text-color-active: 255, 153, 0
+  --primary-half: getColor(primary, 0.5)
+  --text-color: 212, 212, 212
+  --text-hover: getColor(text-color, 0.5)
+  --theme-bg: #18191c
+  --theme-font: Arial
+
+html
+  font-family getVar(theme-font)
+  color getColor(text-color)
+  background getVar(theme-bg)
+
+  &, body
+    padding 0
+    margin 0
+
+  .container
+    padding-top 20px
+    width 1024px
+    margin auto
+
+  .align-right
+    justify-content flex-end
+    margin-left: auto;
+
+  input
+    margin-top 20px
+    caret-color white
+    background transparent
+    color white
+    padding 10px
+    bordered(10px)
+    &:focus
+      outline none
+
+  div
+    box-sizing border-box
+
+  a
+    color getColor(text-color)
+    text-decoration none
+
+    &:hover
+      color getVar(text-hover)
